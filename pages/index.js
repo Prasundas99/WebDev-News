@@ -1,4 +1,3 @@
-import { server } from '../config'
 import ArticleList from '../components/ArticleList'
 
 export default function Home({ articles }) {
@@ -10,7 +9,7 @@ export default function Home({ articles }) {
 }
 
 export const getStaticProps = async () => {
-  const res = await fetch(`${server}/api/articles`)
+  const res = await fetch(`https://newsapi.org/v2/everything?q=dev&apiKey=e43de8f63f324efaa6de2af34e510b7f`)
   const articles = await res.json()
 
   return {
